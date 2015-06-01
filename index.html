@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Digital Clock - jQuery</title>
+	<title>Digital Clock and Weather App - jQuery</title>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<!-- <link rel="stylesheet" type="css/text" href="css/main.min.css"></link> -->
 	<link rel="stylesheet" type="css/text" href="css/main.css"></link>
+	<!-- 
+		For anybody who wants to see the clean code:
+		http://jsfiddle.net/Tekkaman/dh7egmax/
+	-->
 </head>
 
 <body>
 
-<div id="clock"></div>
+<div id="wrapper">
+	<div id="orb">
+		<div id="moonspot1" class="moonspot"></div>
+		<div id="moonspot2" class="moonspot"></div>
+		<div id="moonspot3" class="moonspot"></div>
+	</div>
+	
+	<!--
+	<div id="clouds">
+		<div id="cloud1" class="cloud"></div>
+		<div id="cloud2" class="cloud"></div>
+		<div id="cloud3" class="cloud"></div>
+	</div>
+	-->
+	
+	<div id="clock"></div>
+	<div id="city"></div>
+	<div id="temperature"></div>
+</div>
 
+<!-- <script src="js/main.min.js"></script> -->
 <script src="js/main.js"></script>
 </body>
 </html>

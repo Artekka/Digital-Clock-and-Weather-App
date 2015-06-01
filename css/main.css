@@ -1,16 +1,135 @@
-body {
+.day {
     background-color: #80d4ea;
 }
 
-#clock {
+.night {
+	background-color: #2c3e50;
+}
+
+#clock, #city, #temperature {
     height: 100px;
-    width: 800px;
+    width: 350px;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    padding-top: 70px;
     font-family: courier, monospace;
     text-align: center;
     color: white;
     font-size: 3em;
+}
+
+#clock {
+	padding-top: 70px;
+	}
+
+#city {
+	padding-top: 500px;
+}
+
+#temperature {
+	padding-top: 625px;
+}
+
+#orb {
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    padding: 20px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.sun {
+    background-color: #ffdd00;
+    border: 10px solid #f1c40f;
+}
+/* 
+.sun:hover {
+    border: 20px solid #f1c40f;
+} */
+
+.moon {
+    background-color: #bdc3c7;
+    border: 10px solid #eaeff2;
+}
+/* 
+.moon:hover {
+    border: 20px solid #eaeff2;
+} */
+
+#clouds {
+    height: 100px;
+    width: 350px;
+    margin: auto;
+    position: absolute;
+    top: 20%; left: 0; bottom: 0; right: 0;
+}
+
+.cloud {
+	background-color: #ccc;
+}
+
+#moonspot1 {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    float:right;
+    margin: 20px;
+}
+
+#moonspot2 {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    float:right;
+    margin: 20px;
+}
+
+#moonspot3 {
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    float:right;
+    margin: 20px;
+}
+
+#cloud1 {
+    height: 60px;
+    width: 120px;
+    border-radius: 100%;
+    float: right;
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+	/* border: 10px solid #999; */
+}
+
+#cloud2 {
+	height: 80px;
+	width: 140px;
+	border-radius: 100%;
+	float: right;
+	position: absolute;
+	right: 37%;
+	bottom: 0;
+	/* border: 10px solid #999; */
+}
+
+#cloud3 {
+	height: 100px;
+	width: 160px;
+	border-radius: 100%;
+	position: absolute;
+	right: 14%;
+	bottom: 0;
+	/* border: 10px solid #999; */
+}
+
+.visible1 {
+    background-color: #eaeff2;
+}
+
+.visible2 {
+    background-color: #d0d6da !important;
 }
