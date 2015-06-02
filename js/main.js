@@ -1,4 +1,7 @@
 $(document).ready(function(){
+		/*********************
+		API Request
+		*********************/
 		var xhr = new XMLHttpRequest();
 			xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Chicago,us", false);
 			xhr.send();
@@ -8,7 +11,12 @@ $(document).ready(function(){
 	function displayTime() {
 		
 		var weatherData = JSON.parse(xhr.responseText);
-
+		
+			// console.log(weatherData.clouds.all);
+		
+		/*********************
+		Sunrise and Sunset
+		*********************/
 		var sunrise = (weatherData.sys.sunrise);
 			sunrise = new Date(sunrise*1000).toLocaleString(); // converts epoch into actual readable date and time
 			sunrise = sunrise.replace(/^.+,/, "").replace(/ /,""); // removes the "," everything before it and the space after
@@ -25,6 +33,9 @@ $(document).ready(function(){
 			sunset = (sunset + sunsetOffset).toString(); // turn the integer back into a string to be read later
 			//console.log(sunset);
 		
+		/*********************
+		City and Temperature
+		*********************/
 		var city = (weatherData.name);
 		
 		var temperature = Math.round((((weatherData.main.temp) - 273.15)*(1.8) + 32.00)*10)/10; // Formula for Kelvin to F
@@ -35,6 +46,10 @@ $(document).ready(function(){
 		
 		cityDiv.innerText = city;
 		temperatureDiv.innerText = temperature + " " + unescape('%B0') + "F"; // &B0 = the degrees sign
+		
+		/*********************
+		Digital Clock
+		*********************/
 		
 		var currentTime = new Date();
 		var hours = currentTime.getHours();
@@ -78,6 +93,21 @@ $(document).ready(function(){
 		}
 		
 		clockDiv.innerText = hours + ":" + minutes + ":" + seconds + " " + meridiem; // concatenate
+		
+		/*********************
+		Clouds
+		*********************/
+		if ((weatherData.clouds.all) > 15 && (weatherData.clouds.all) < 30) {
+			$('#cloud1').removeClass('hidden');
+		}
+		
+		if ((weatherData.clouds.all) > 30 && (weatherData.clouds.all) < 50) {
+			$('#cloud2').removeClass('hidden');
+		}
+		
+		if ((weatherData.clouds.all) > 50 ) {
+			$('.clouds').removeClass('hidden');
+		}
 	}
 	
 	displayTime(); // display on page load

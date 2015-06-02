@@ -20,7 +20,8 @@
 
 #clock {
 	padding-top: 70px;
-	}
+	z-index: 9999;
+}
 
 #city {
 	padding-top: 500px;
@@ -38,6 +39,7 @@
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
+	z-index: 100;
 }
 
 .sun {
@@ -67,7 +69,6 @@
 }
 
 .cloud {
-	background-color: #ccc;
 }
 
 #moonspot1 {
@@ -95,35 +96,21 @@
 }
 
 #cloud1 {
-    height: 60px;
-    width: 120px;
-    border-radius: 100%;
-    float: right;
-    position: absolute;
-    right: 0;
-    bottom: 10%;
-	/* border: 10px solid #999; */
+    position: relative;
+	top: 35%;
+	left: 50%;
+	bottom: 0;
+	right: 0;
+	z-index: 110;
 }
 
 #cloud2 {
-	height: 80px;
-	width: 140px;
-	border-radius: 100%;
-	float: right;
-	position: absolute;
-	right: 37%;
+	position: relative;
+	top: -150%;
+	left: -25%;
 	bottom: 0;
-	/* border: 10px solid #999; */
-}
-
-#cloud3 {
-	height: 100px;
-	width: 160px;
-	border-radius: 100%;
-	position: absolute;
-	right: 14%;
-	bottom: 0;
-	/* border: 10px solid #999; */
+	right: 0;
+	z-index: 90;
 }
 
 .visible1 {
@@ -132,4 +119,8 @@
 
 .visible2 {
     background-color: #d0d6da !important;
+}
+
+.hidden {
+	display: none;
 }
